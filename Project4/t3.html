@@ -1,0 +1,16 @@
+<!--the vulerable code is in auth.php: 42 because it does not sanitize usernname here. we can exploit by first registering a new user as "<username>'--"  then using this new user to submit login form. This way  it can bypass sanitization on line 31 as this new user exists and sql injection will work on line 42 as there is no filter on username here, and it will login as inteneded user-->
+
+<htnml>
+<body>
+<form action="" onsubmit="" method="POST">
+<!-- same drill. forms in this format if you need it-->
+</form>
+
+<input name="login" id="targetlogin" value="username">
+<button id="exploit" onclick="">Hold on To Your Butts!</button>
+<!-- You will likely need to do a little javascripting. -->
+<script type="text/javascript">
+<!-- some script here if you need it -->
+</script>
+</body>
+</html>

