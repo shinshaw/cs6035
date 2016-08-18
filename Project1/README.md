@@ -1,0 +1,1 @@
+The following C code contains a stack buffer overflow vulnerability. Please write an exploit (e.g., Python script) to open a shell on Linux. The high level idea is to overwrite the return address with the address of function system(), and pass the parameter “sh” to this function. Once the return instruction is executed, this function will be called to open a shell.
