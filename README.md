@@ -1,0 +1,1 @@
+Its main topics include: security basics, security management and risk assessment, software security, operating systems security, database security, cryptography algorithms and protocols, network authentication and secure network applications, malicious malware, network threats and defenses, web security, mobile security, legal and ethical issues, and privacy.
